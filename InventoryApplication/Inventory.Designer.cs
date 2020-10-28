@@ -189,6 +189,7 @@
             this.btnAddProduct.TabIndex = 17;
             this.btnAddProduct.Text = "Add Product";
             this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
             // Inventory
             // 

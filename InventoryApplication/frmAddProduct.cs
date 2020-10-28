@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Text.RegularExpressions;
+
 
 namespace InventoryApplication
 {
@@ -26,9 +26,12 @@ namespace InventoryApplication
         private string _description;
         private int _Quantity;
         private double _SellProduct;
+        BindingSource ProductList;
 
         private void frmAddProduct_Load(object sender, EventArgs e)
         {
+            ProductList = new BindingSource();
+
             string [] ListOfProductCategory = new string[]
             {
                 "Beverages",
@@ -46,19 +49,19 @@ namespace InventoryApplication
                 cbCategory.Items.Add(Item);
             }
          }
-        public string _Product_Name(string name)
+        public string _ProductName(string name)
         {
             if (!Regex.IsMatch(name, @"^[a-zA-Z]+$"))
                 //Exception here
                 return name;
         }
-        public int Quantity(string qty)
+        public int _Quantity(string qty)
         {
             if (!Regex.IsMatch(qty, @"^[0-9]"))
                 //Exception here
                 return Convert.ToInt32(qty);
         }
-        public double SellingPrice(string price)
+        public double _SellingPrice(string price)
         {
             if (!Regex.IsMatch(price.ToString(), @"^(\d*\.)?\d+$"))
                 //Exception here
